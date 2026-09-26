@@ -1,0 +1,5 @@
+# Configuración de despliegue en Netlify
+# Sitio 100% estático generado con `nuxt generate`
+[build]
+  command = "npm run generate"
+  publish = ".output/public"

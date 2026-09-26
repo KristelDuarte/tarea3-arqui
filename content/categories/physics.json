@@ -1,0 +1,10 @@
+{
+  "key": "physics",
+  "name": "Física",
+  "fullname": "Premio Nobel de Física",
+  "ordinal": 1,
+  "color": "#1f6feb",
+  "icon": "atom",
+  "description": "Reconoce descubrimientos e inventos sobresalientes en el campo de la física, desde la radiactividad y la mecánica cuántica hasta la cosmología y las partículas elementales.",
+  "count": 230
+}

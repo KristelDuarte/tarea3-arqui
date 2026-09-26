@@ -1,0 +1,20 @@
+# Dependencias y artefactos generados
+node_modules/
+.nuxt/
+.output/
+dist/
+.data/
+
+# Entorno
+.env
+*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Datos crudos descargados (el dataset final vive en content/nobel.csv)
+data/nobel-laureates.json
+
+# Material del curso (no forma parte del sitio)
+Material_ARQUI_Completo.md

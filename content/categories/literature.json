@@ -1,0 +1,10 @@
+{
+  "key": "literature",
+  "name": "Literatura",
+  "fullname": "Premio Nobel de Literatura",
+  "ordinal": 4,
+  "color": "#b8860b",
+  "icon": "quill",
+  "description": "Distingue la obra literaria más destacada producida en dirección ideal, reconociendo a poetas, novelistas, dramaturgos y ensayistas de todo el mundo.",
+  "count": 120
+}

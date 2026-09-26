@@ -1,0 +1,10 @@
+{
+  "key": "chemistry",
+  "name": "Química",
+  "fullname": "Premio Nobel de Química",
+  "ordinal": 2,
+  "color": "#9f4f2f",
+  "icon": "flask",
+  "description": "Otorgado por contribuciones fundamentales a la química, como la tabla periódica, la polimerización, la estructura del ADN y los métodos de la química moderna.",
+  "count": 200
+}

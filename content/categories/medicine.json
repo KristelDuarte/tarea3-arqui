@@ -1,0 +1,10 @@
+{
+  "key": "medicine",
+  "name": "Medicina",
+  "fullname": "Premio Nobel de Fisiología o Medicina",
+  "ordinal": 3,
+  "color": "#2f9e6e",
+  "icon": "heart",
+  "description": "Premia los logros más relevantes en fisiología y medicina: desde la insulina y los antibióticos hasta el desciframiento del genoma y la inmunoterapia.",
+  "count": 232
+}

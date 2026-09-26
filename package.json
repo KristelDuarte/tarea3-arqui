@@ -1,0 +1,24 @@
+{
+  "name": "premios-nobel",
+  "private": true,
+  "type": "module",
+  "description": "Sitio de Arquitectura de Información para explorar el dataset de los Premios Nobel (1901-2025).",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "data": "node scripts/build-dataset.mjs",
+    "cms:check": "node scripts/check-comet.mjs",
+    "cms:import": "node scripts/import-to-comet.mjs",
+    "postinstall": "nuxt prepare"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "nuxt": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}
