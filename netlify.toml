@@ -3,3 +3,11 @@
 [build]
   command = "npm run generate"
   publish = ".output/public"
+
+# Variables disponibles durante el build (el contenido se lee del CMS al generar).
+# En CometCMS v1.0.1 la lectura es pública, así que NO se necesita token.
+# Si el CMS se actualiza a v1.0.2+ y se marcan los content types como "Private",
+# agrega NUXT_COMET_API_TOKEN en Site settings → Environment variables.
+[build.environment]
+  NUXT_COMET_URL = "https://cms-una.gt.tc"
+  NUXT_COMET_WORKSPACE = "premios-nobel"
