@@ -68,7 +68,7 @@ const schemaCards = computed(() => [
   <div>
     <!-- Portada -->
     <section class="hero">
-      <p class="hero-kicker">Proyecto · Arquitectura de Información · Dataset Nobel</p>
+      <p class="hero-kicker">Tarea 3 · Arquitectura de Información · Dataset Nobel</p>
       <h1>Los Premios Nobel, de 1901 a 2025</h1>
       <p class="lead">
         Más de mil registros —cada premio concedido por la Fundación Nobel— en un

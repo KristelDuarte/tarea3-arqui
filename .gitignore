@@ -18,3 +18,6 @@ data/nobel-laureates.json
 
 # Material del curso (no forma parte del sitio)
 Material_ARQUI_Completo.md
+
+# Comprimidos de entrega
+*.zip

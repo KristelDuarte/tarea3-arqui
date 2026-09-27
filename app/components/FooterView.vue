@@ -49,7 +49,7 @@ const year = new Date().getFullYear()
             >CC BY 4.0</a
           >.
         </span>
-        <span>Proyecto 1 · Kristel Duarte Pérez · Arquitectura de Información · © {{ year }}</span>
+        <span>Tarea 3 · Kristel Duarte Pérez · Arquitectura de Información · © {{ year }}</span>
       </div>
     </div>
   </footer>
