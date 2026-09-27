@@ -247,16 +247,35 @@ npm run generate   # sitio estático (lo que usa Netlify)
 
 ### Netlify
 
-1. **Site settings → Environment variables**: define
-   `NUXT_COMET_URL`, `NUXT_COMET_WORKSPACE` y `NUXT_COMET_API_TOKEN`
-   (el token de **lectura**). El `.env` local no se sube al repositorio.
-2. **Build**: `npm run generate` · **Publish directory**: `.output/public`
-   (ya configurado en `netlify.toml`).
+`netlify.toml` ya deja todo configurado:
+
+```toml
+[build]
+  command = "npm run generate"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"          # Nuxt 4 exige Node >= 20.19
+  NUXT_COMET_URL = "https://cms-una.gt.tc"
+  NUXT_COMET_WORKSPACE = "premios-nobel"
+```
+
+1. **Conectar el repositorio**: Add new site → Import an existing project.
+2. **Variables de entorno**: no hace falta añadir ninguna; sólo define
+   `NUXT_COMET_API_TOKEN` si el CMS se actualiza a v1.0.2+ y marcas los content
+   types como *Private*. El `.env` local no se sube al repositorio.
 3. **Refresco automático**: como `generate` pre-renderiza el sitio, para que los
    cambios del CMS se reflejen hay que reconstruir. En Netlify crea un
    **Build hook** (Site settings → Build hooks) y en Comet CMS agrega un
    **Webhook** (System → Webhooks) apuntando a esa URL, disparado por
    `content.published` y `content.unpublished`.
+
+> **`dist` vs `.output/public`.** Cuando el build corre **dentro de Netlify**,
+> Nuxt detecta el entorno y usa el preset `netlify-static`, que genera la salida
+> en **`dist/`**. En cambio, un `npm run generate` en tu máquina produce
+> **`.output/public/`**. Por eso `publish = "dist"`. Si un deploy falla con
+> *"Deploy directory does not exist"*, mira la línea `● Nitro preset:` del log
+> para saber qué carpeta se generó.
 
 > Alternativa (SSR): pon `nitro.prerender.crawlLinks = false` en
 > `nuxt.config.ts` y despliega con `npm run build` usando el preset de servidor

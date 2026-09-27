@@ -1,8 +1,12 @@
 # Configuración de despliegue en Netlify
-# Sitio 100% estático generado con `nuxt generate`
+# Sitio 100% estático generado con `nuxt generate`.
+#
+# OJO: cuando el build corre DENTRO de Netlify, Nuxt detecta el entorno y usa
+# el preset `netlify-static`, que genera la salida en `dist/` (no en
+# `.output/public/`, que es lo que produce un build local).
 [build]
   command = "npm run generate"
-  publish = ".output/public"
+  publish = "dist"
 
 # Variables disponibles durante el build (el contenido se lee del CMS al generar).
 # En CometCMS v1.0.1 la lectura es pública, así que NO se necesita token.
