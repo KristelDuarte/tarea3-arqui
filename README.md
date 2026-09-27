@@ -6,7 +6,9 @@
 
 **Cédula:** 119010766
 
-**URL del proyecto (Netlify):** https://proyecto1-arqui.netlify.app/
+**URL del proyecto (Netlify):** https://tarea-3-arqui.netlify.app/
+
+**Repositorio:** https://github.com/KristelDuarte/tarea3-arqui
 
 ---
 
@@ -59,6 +61,30 @@ El token de la API vive **solo en el servidor** (`runtimeConfig` privado y
 variables de entorno `NUXT_COMET_*`). El navegador llama únicamente a
 `/api/comet/...`; el encabezado `Authorization` se agrega en Nitro y nunca se
 expone al cliente.
+
+## Decisiones y limitaciones
+
+Notas técnicas del uso de Comet CMS **v1.0.1**, útiles para reproducir el proyecto:
+
+- **El contenido no vive en el repositorio.** Se administra en Comet CMS y se
+  consulta por su API REST a través del proxy `server/api/comet/[...path].ts`, que
+  agrega el encabezado `Authorization` en el servidor: el token **nunca** llega al
+  navegador.
+- **v1.0.1 no permite marcar los content types como *Private*** (esa opción llega
+  en v1.0.2), así que **la lectura es pública y no necesita token**. El código ya
+  soporta el caso *Private*: basta definir `NUXT_COMET_API_TOKEN` y marcar los
+  tipos como privados.
+- **Los filtros sobre relaciones usan el `slug`**, no el `id`
+  (`filter[category]=economic`), aunque la relación almacene el id internamente.
+- **El hosting del CMS responde `508` cuando se satura** y protege las peticiones
+  con un *challenge* de cookie (`aes.js`). El proxy resuelve el challenge, cachea
+  las respuestas en memoria y reintenta con espera, para que `nuxt generate`
+  complete el prerender sin agotar el límite del hosting.
+- **Local vs Netlify:** `npm run generate` local escribe en `.output/public/`, pero
+  dentro de Netlify Nuxt usa el preset `netlify-static` y escribe en `dist/` (por
+  eso `netlify.toml` publica `dist`).
+- **Sitio estático:** el contenido se lee al construir. Para reflejar cambios del
+  CMS hay que reconstruir (Build hook de Netlify + Webhook de Comet).
 
 ## Datos y atribución
 

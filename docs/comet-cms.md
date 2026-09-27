@@ -4,7 +4,8 @@ Guía para administrar el contenido del sitio **Premios Nobel** desde
 [Comet CMS](https://getcometcms.github.io/CometCMS/) (CMS headless) y consumirlo
 desde Nuxt.
 
-- **Sitio publicado (Netlify):** https://proyecto1-arqui.netlify.app/
+- **Sitio publicado (Netlify):** https://tarea-3-arqui.netlify.app/
+- **Repositorio:** https://github.com/KristelDuarte/tarea3-arqui
 - **CMS:** https://cms-una.gt.tc · **Workspace:** `Premios Nobel` (`premios-nobel`)
 - **Estudiante:** Kristel Duare Perez · **Cédula:** 119010766
 
